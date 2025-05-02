@@ -1,4 +1,4 @@
-# Kuramoto Relational Learning
+# Binding by Oscillatory Dynamics in Neural Architectures for Relational Reasoning
 
 A differentiable, oscillator-based neural architecture for abstract relational reasoning. This repository implements biologically-inspired binding-by-synchrony mechanisms using Kuramoto dynamics to solve relational reasoning tasks such as same/different discrimination and relational match-to-sample (RMTS).
 
