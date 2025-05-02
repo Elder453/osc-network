@@ -32,7 +32,7 @@ We provide an `environment.yml` file for easy setup with Conda:
 conda env create -f environment.yml
 
 # Activate the environment
-conda activate kuramoto-rel
+conda activate osc
 ```
 
 Please verify your CUDA installation is properly configured by running:
@@ -50,7 +50,9 @@ kuramoto_relational/
 ├── main.py                    # Entry point script
 ├── config.py                  # Configuration and hyperparameters
 ├── environment.yml            # Conda environment specification
-├── requirements.txt           # Package dependencies for pip
+├── deliverables/              
+│   ├── thesis.pdf          
+│   └── poster.pdf
 ├── data/                      # Dataset handling
 │   ├── __init__.py          
 │   ├── datasets.py            # IconSameDiffDataset, IconRelMatchToSampleDataset
