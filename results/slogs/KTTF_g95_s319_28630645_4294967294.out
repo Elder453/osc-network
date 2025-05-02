@@ -1,0 +1,85 @@
+Running command: python kuramoto_main.py   --exp_name KTTF_g95_s319   --seed 319   --n_train_glyphs 95   --n_train 4000   --n_test 10000   --epochs 50   --rmts_epochs 50   --model_type kuramoto --use_omega --disable_between --animate
+>>> Hyper‑parameters
+exp_name            : KTTF_g95_s319
+seed                : 319
+checkpoint_every    : 10
+load_model          : final
+model_type          : kuramoto
+animate             : True
+epochs              : 50
+rmts_epochs         : 50
+batch_size          : 64
+lr                  : 0.001
+finetune            : None
+embedding_dim       : 16
+oscillator_dim      : 2
+num_steps           : 25
+step_size           : 0.1
+use_omega           : True
+omega_kappa         : 2.0
+disable_between     : True
+symmetric_j         : False
+n_train_glyphs      : 95
+n_train             : 4000
+n_val               : 100
+n_test              : 10000
+num_workers         : 2
+>>> Starting training …
+Running on cuda
+
+S/D test loss=0.2019 | acc=0.9316
+S/D training complete.
+
+Epoch 1/50 | Train Loss=0.6886, Acc=0.5377 | Val Loss=0.6830, Acc=0.5600
+Epoch 2/50 | Train Loss=0.6570, Acc=0.6450 | Val Loss=0.6310, Acc=0.7300
+Epoch 3/50 | Train Loss=0.5822, Acc=0.7895 | Val Loss=0.5291, Acc=0.8100
+Epoch 4/50 | Train Loss=0.4658, Acc=0.9045 | Val Loss=0.4035, Acc=0.9500
+Epoch 5/50 | Train Loss=0.3553, Acc=0.9335 | Val Loss=0.2860, Acc=0.9300
+Epoch 6/50 | Train Loss=0.2795, Acc=0.9415 | Val Loss=0.2466, Acc=0.9900
+Epoch 7/50 | Train Loss=0.2337, Acc=0.9495 | Val Loss=0.1869, Acc=0.9700
+Epoch 8/50 | Train Loss=0.2098, Acc=0.9447 | Val Loss=0.1678, Acc=0.9700
+Epoch 9/50 | Train Loss=0.1783, Acc=0.9593 | Val Loss=0.1471, Acc=0.9800
+Epoch 10/50 | Train Loss=0.1713, Acc=0.9577 | Val Loss=0.1126, Acc=0.9900
+Epoch 11/50 | Train Loss=0.1570, Acc=0.9567 | Val Loss=0.1266, Acc=0.9800
+Epoch 12/50 | Train Loss=0.1436, Acc=0.9627 | Val Loss=0.1137, Acc=0.9700
+Epoch 13/50 | Train Loss=0.1442, Acc=0.9573 | Val Loss=0.0891, Acc=0.9800
+Epoch 14/50 | Train Loss=0.1318, Acc=0.9613 | Val Loss=0.0797, Acc=0.9900
+Epoch 15/50 | Train Loss=0.1327, Acc=0.9593 | Val Loss=0.0734, Acc=1.0000
+Epoch 16/50 | Train Loss=0.1263, Acc=0.9643 | Val Loss=0.1070, Acc=0.9900
+Epoch 17/50 | Train Loss=0.1242, Acc=0.9625 | Val Loss=0.0776, Acc=0.9800
+Epoch 18/50 | Train Loss=0.1230, Acc=0.9610 | Val Loss=0.0720, Acc=0.9900
+Epoch 19/50 | Train Loss=0.1154, Acc=0.9645 | Val Loss=0.0608, Acc=0.9700
+Epoch 20/50 | Train Loss=0.1159, Acc=0.9653 | Val Loss=0.0819, Acc=0.9900
+Epoch 21/50 | Train Loss=0.1161, Acc=0.9667 | Val Loss=0.0925, Acc=0.9600
+Epoch 22/50 | Train Loss=0.1120, Acc=0.9637 | Val Loss=0.0631, Acc=0.9800
+Epoch 23/50 | Train Loss=0.1041, Acc=0.9663 | Val Loss=0.1396, Acc=0.9300
+Epoch 24/50 | Train Loss=0.1084, Acc=0.9665 | Val Loss=0.0674, Acc=1.0000
+Epoch 25/50 | Train Loss=0.1116, Acc=0.9657 | Val Loss=0.0588, Acc=0.9900
+Epoch 26/50 | Train Loss=0.1078, Acc=0.9633 | Val Loss=0.0665, Acc=0.9800
+Epoch 27/50 | Train Loss=0.1056, Acc=0.9685 | Val Loss=0.0637, Acc=0.9900
+Epoch 28/50 | Train Loss=0.1053, Acc=0.9655 | Val Loss=0.0625, Acc=0.9800
+Epoch 29/50 | Train Loss=0.1029, Acc=0.9683 | Val Loss=0.0646, Acc=0.9800
+Epoch 30/50 | Train Loss=0.0941, Acc=0.9702 | Val Loss=0.0388, Acc=1.0000
+Epoch 31/50 | Train Loss=0.1089, Acc=0.9637 | Val Loss=0.0768, Acc=0.9600
+Epoch 32/50 | Train Loss=0.1022, Acc=0.9663 | Val Loss=0.0952, Acc=0.9500
+Epoch 33/50 | Train Loss=0.0989, Acc=0.9685 | Val Loss=0.0840, Acc=0.9800
+Epoch 34/50 | Train Loss=0.1122, Acc=0.9637 | Val Loss=0.0534, Acc=0.9900
+Epoch 35/50 | Train Loss=0.1049, Acc=0.9655 | Val Loss=0.0549, Acc=0.9800
+Epoch 36/50 | Train Loss=0.1051, Acc=0.9657 | Val Loss=0.0768, Acc=0.9900
+Epoch 37/50 | Train Loss=0.1037, Acc=0.9685 | Val Loss=0.0532, Acc=0.9900
+Epoch 38/50 | Train Loss=0.0949, Acc=0.9690 | Val Loss=0.0753, Acc=0.9600
+Epoch 39/50 | Train Loss=0.1042, Acc=0.9663 | Val Loss=0.0654, Acc=0.9800
+Epoch 40/50 | Train Loss=0.1107, Acc=0.9637 | Val Loss=0.0541, Acc=1.0000
+Epoch 41/50 | Train Loss=0.1077, Acc=0.9617 | Val Loss=0.0764, Acc=0.9500
+Epoch 42/50 | Train Loss=0.1041, Acc=0.9647 | Val Loss=0.0538, Acc=0.9700
+Epoch 43/50 | Train Loss=0.0979, Acc=0.9685 | Val Loss=0.0631, Acc=0.9800
+Epoch 44/50 | Train Loss=0.0945, Acc=0.9712 | Val Loss=0.0640, Acc=0.9700
+Epoch 45/50 | Train Loss=0.1082, Acc=0.9623 | Val Loss=0.0780, Acc=0.9700
+Epoch 46/50 | Train Loss=0.0971, Acc=0.9710 | Val Loss=0.0541, Acc=0.9800
+Epoch 47/50 | Train Loss=0.0990, Acc=0.9673 | Val Loss=0.0645, Acc=0.9700
+Epoch 48/50 | Train Loss=0.0932, Acc=0.9677 | Val Loss=0.0449, Acc=0.9900
+Epoch 49/50 | Train Loss=0.1026, Acc=0.9673 | Val Loss=0.0515, Acc=0.9800
+Epoch 50/50 | Train Loss=0.1037, Acc=0.9623 | Val Loss=0.0625, Acc=0.9800
+
+RMTS test loss=0.2917 | acc=0.8919
+R-MTS training complete.

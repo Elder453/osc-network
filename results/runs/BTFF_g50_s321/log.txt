@@ -1,0 +1,216 @@
+[[34m2025-04-28 10:40:50[0m] Experiment directory created at runs/BTFF_g50_s321
+[[34m2025-04-28 10:40:50[0m] Generating training/validation datasets...
+[[34m2025-04-28 10:40:50[0m] range(0, 50)
+[[34m2025-04-28 10:40:50[0m] Generating test dataset (OOD)...
+[[34m2025-04-28 10:40:50[0m] range(50, 100)
+[[34m2025-04-28 10:40:51[0m] Initializing model and optimizer...
+[[34m2025-04-28 10:40:51[0m] Total trainable parameters: 47729
+[[34m2025-04-28 10:40:51[0m] Start training for 50 epochs
+[[34m2025-04-28 10:40:52[0m] 
+Epoch 1/50 |    0.8s
+train loss:0.6893 | acc:0.5730
+val   loss:0.6862 | acc:0.6100
+[[34m2025-04-28 10:40:52[0m] 
+Epoch 2/50 |    0.2s
+train loss:0.6776 | acc:0.6400
+val   loss:0.6643 | acc:0.6800
+[[34m2025-04-28 10:40:53[0m] 
+Epoch 3/50 |    0.6s
+train loss:0.6554 | acc:0.6470
+val   loss:0.6218 | acc:0.7500
+[[34m2025-04-28 10:40:53[0m] 
+Epoch 4/50 |    0.2s
+train loss:0.6210 | acc:0.6845
+val   loss:0.6100 | acc:0.6900
+[[34m2025-04-28 10:40:53[0m] 
+Epoch 5/50 |    0.2s
+train loss:0.5752 | acc:0.7260
+val   loss:0.5378 | acc:0.7800
+[[34m2025-04-28 10:40:54[0m] 
+Epoch 6/50 |    0.2s
+train loss:0.5481 | acc:0.7335
+val   loss:0.4881 | acc:0.7900
+[[34m2025-04-28 10:40:54[0m] 
+Epoch 7/50 |    0.2s
+train loss:0.5101 | acc:0.7610
+val   loss:0.4649 | acc:0.7900
+[[34m2025-04-28 10:40:54[0m] 
+Epoch 8/50 |    0.2s
+train loss:0.4704 | acc:0.7970
+val   loss:0.4429 | acc:0.7900
+[[34m2025-04-28 10:40:54[0m] 
+Epoch 9/50 |    0.2s
+train loss:0.4498 | acc:0.8025
+val   loss:0.4464 | acc:0.8000
+[[34m2025-04-28 10:40:54[0m] 
+Epoch 10/50 |    0.2s
+train loss:0.4177 | acc:0.8225
+val   loss:0.4289 | acc:0.7800
+[[34m2025-04-28 10:40:55[0m] 
+Epoch 11/50 |    0.2s
+train loss:0.3945 | acc:0.8320
+val   loss:0.4012 | acc:0.8300
+[[34m2025-04-28 10:40:55[0m] 
+Epoch 12/50 |    0.2s
+train loss:0.3754 | acc:0.8455
+val   loss:0.3775 | acc:0.8600
+[[34m2025-04-28 10:40:55[0m] 
+Epoch 13/50 |    0.2s
+train loss:0.3529 | acc:0.8580
+val   loss:0.3268 | acc:0.9000
+[[34m2025-04-28 10:40:55[0m] 
+Epoch 14/50 |    0.2s
+train loss:0.3439 | acc:0.8585
+val   loss:0.4126 | acc:0.8100
+[[34m2025-04-28 10:40:56[0m] 
+Epoch 15/50 |    0.2s
+train loss:0.3450 | acc:0.8580
+val   loss:0.3936 | acc:0.8300
+[[34m2025-04-28 10:40:56[0m] 
+Epoch 16/50 |    0.2s
+train loss:0.3354 | acc:0.8640
+val   loss:0.3404 | acc:0.8500
+[[34m2025-04-28 10:40:56[0m] 
+Epoch 17/50 |    0.2s
+train loss:0.3196 | acc:0.8790
+val   loss:0.3317 | acc:0.8400
+[[34m2025-04-28 10:40:56[0m] 
+Epoch 18/50 |    0.2s
+train loss:0.2945 | acc:0.8885
+val   loss:0.3182 | acc:0.8800
+[[34m2025-04-28 10:40:56[0m] 
+Epoch 19/50 |    0.2s
+train loss:0.3182 | acc:0.8660
+val   loss:0.3197 | acc:0.8600
+[[34m2025-04-28 10:40:57[0m] 
+Epoch 20/50 |    0.2s
+train loss:0.3110 | acc:0.8680
+val   loss:0.3384 | acc:0.8600
+[[34m2025-04-28 10:40:57[0m] 
+Epoch 21/50 |    0.3s
+train loss:0.2942 | acc:0.8945
+val   loss:0.2453 | acc:0.9300
+[[34m2025-04-28 10:40:57[0m] 
+Epoch 22/50 |    0.2s
+train loss:0.2666 | acc:0.8960
+val   loss:0.3020 | acc:0.8500
+[[34m2025-04-28 10:40:57[0m] 
+Epoch 23/50 |    0.2s
+train loss:0.2535 | acc:0.9045
+val   loss:0.2794 | acc:0.8800
+[[34m2025-04-28 10:40:58[0m] 
+Epoch 24/50 |    0.2s
+train loss:0.2393 | acc:0.9100
+val   loss:0.2807 | acc:0.9000
+[[34m2025-04-28 10:40:58[0m] 
+Epoch 25/50 |    0.2s
+train loss:0.2345 | acc:0.9140
+val   loss:0.2353 | acc:0.9300
+[[34m2025-04-28 10:40:58[0m] 
+New best model saved at epoch 26 with validation accuracy 0.9300
+[[34m2025-04-28 10:40:58[0m] 
+Epoch 26/50 |    0.2s
+train loss:0.2218 | acc:0.9235
+val   loss:0.2155 | acc:0.9300
+[[34m2025-04-28 10:40:58[0m] 
+Epoch 27/50 |    0.3s
+train loss:0.2330 | acc:0.9130
+val   loss:0.2879 | acc:0.8400
+[[34m2025-04-28 10:40:59[0m] 
+Epoch 28/50 |    0.2s
+train loss:0.2270 | acc:0.9180
+val   loss:0.2638 | acc:0.8800
+[[34m2025-04-28 10:40:59[0m] 
+Epoch 29/50 |    0.2s
+train loss:0.1995 | acc:0.9310
+val   loss:0.2373 | acc:0.9200
+[[34m2025-04-28 10:40:59[0m] 
+Epoch 30/50 |    0.2s
+train loss:0.2012 | acc:0.9305
+val   loss:0.2270 | acc:0.9200
+[[34m2025-04-28 10:40:59[0m] 
+Epoch 31/50 |    0.2s
+train loss:0.1914 | acc:0.9335
+val   loss:0.2065 | acc:0.9300
+[[34m2025-04-28 10:41:00[0m] 
+Epoch 32/50 |    0.2s
+train loss:0.1908 | acc:0.9340
+val   loss:0.2070 | acc:0.9200
+[[34m2025-04-28 10:41:00[0m] 
+Epoch 33/50 |    0.3s
+train loss:0.1762 | acc:0.9430
+val   loss:0.2027 | acc:0.9300
+[[34m2025-04-28 10:41:00[0m] 
+Epoch 34/50 |    0.2s
+train loss:0.1813 | acc:0.9385
+val   loss:0.1957 | acc:0.9300
+[[34m2025-04-28 10:41:00[0m] 
+New best model saved at epoch 35 with validation accuracy 0.9500
+[[34m2025-04-28 10:41:00[0m] 
+Epoch 35/50 |    0.2s
+train loss:0.1735 | acc:0.9425
+val   loss:0.1718 | acc:0.9500
+[[34m2025-04-28 10:41:00[0m] 
+Epoch 36/50 |    0.2s
+train loss:0.1759 | acc:0.9430
+val   loss:0.2147 | acc:0.9200
+[[34m2025-04-28 10:41:01[0m] 
+Epoch 37/50 |    0.2s
+train loss:0.1707 | acc:0.9465
+val   loss:0.1920 | acc:0.9400
+[[34m2025-04-28 10:41:01[0m] 
+Epoch 38/50 |    0.2s
+train loss:0.1628 | acc:0.9515
+val   loss:0.2314 | acc:0.9100
+[[34m2025-04-28 10:41:01[0m] 
+Epoch 39/50 |    0.3s
+train loss:0.1740 | acc:0.9410
+val   loss:0.2301 | acc:0.9100
+[[34m2025-04-28 10:41:01[0m] 
+Epoch 40/50 |    0.2s
+train loss:0.1629 | acc:0.9495
+val   loss:0.1664 | acc:0.9500
+[[34m2025-04-28 10:41:02[0m] 
+New best model saved at epoch 41 with validation accuracy 0.9700
+[[34m2025-04-28 10:41:02[0m] 
+Epoch 41/50 |    0.2s
+train loss:0.1617 | acc:0.9470
+val   loss:0.1531 | acc:0.9700
+[[34m2025-04-28 10:41:02[0m] 
+Epoch 42/50 |    0.2s
+train loss:0.1586 | acc:0.9470
+val   loss:0.2019 | acc:0.9300
+[[34m2025-04-28 10:41:02[0m] 
+Epoch 43/50 |    0.2s
+train loss:0.1656 | acc:0.9475
+val   loss:0.1502 | acc:0.9300
+[[34m2025-04-28 10:41:02[0m] 
+Epoch 44/50 |    0.2s
+train loss:0.1553 | acc:0.9490
+val   loss:0.1800 | acc:0.9400
+[[34m2025-04-28 10:41:03[0m] 
+Epoch 45/50 |    0.2s
+train loss:0.1467 | acc:0.9580
+val   loss:0.1648 | acc:0.9500
+[[34m2025-04-28 10:41:03[0m] 
+Epoch 46/50 |    0.2s
+train loss:0.1539 | acc:0.9515
+val   loss:0.1838 | acc:0.9300
+[[34m2025-04-28 10:41:03[0m] 
+Epoch 47/50 |    0.2s
+train loss:0.1568 | acc:0.9480
+val   loss:0.1659 | acc:0.9300
+[[34m2025-04-28 10:41:03[0m] 
+Epoch 48/50 |    0.2s
+train loss:0.1524 | acc:0.9550
+val   loss:0.1852 | acc:0.9200
+[[34m2025-04-28 10:41:03[0m] 
+Epoch 49/50 |    0.2s
+train loss:0.1550 | acc:0.9525
+val   loss:0.1953 | acc:0.9300
+[[34m2025-04-28 10:41:04[0m] 
+Epoch 50/50 |    0.2s
+train loss:0.1539 | acc:0.9505
+val   loss:0.1722 | acc:0.9400
+[[34m2025-04-28 10:41:05[0m] 
+ S/D test loss=0.3238 | acc=0.8645

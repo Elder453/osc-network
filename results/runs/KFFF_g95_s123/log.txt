@@ -1,0 +1,227 @@
+[[34m2025-04-28 11:14:27[0m] Experiment directory created at runs/KFFF_g95_s123
+[[34m2025-04-28 11:14:27[0m] Generating training/validation datasets...
+[[34m2025-04-28 11:14:27[0m] range(0, 95)
+[[34m2025-04-28 11:14:27[0m] Generating test dataset (OOD)...
+[[34m2025-04-28 11:14:27[0m] range(95, 100)
+[[34m2025-04-28 11:14:28[0m] Initializing model and optimizer...
+[[34m2025-04-28 11:14:28[0m] Total trainable parameters: 49297
+[[34m2025-04-28 11:14:28[0m] Start training for 50 epochs
+[[34m2025-04-28 11:14:31[0m] Animation.save using <class 'matplotlib.animation.PillowWriter'>
+[[34m2025-04-28 11:15:27[0m] Animation.save using <class 'matplotlib.animation.PillowWriter'>
+[[34m2025-04-28 11:15:56[0m] Animation.save using <class 'matplotlib.animation.PillowWriter'>
+[[34m2025-04-28 11:16:49[0m] Animation.save using <class 'matplotlib.animation.PillowWriter'>
+[[34m2025-04-28 11:17:24[0m] 
+Epoch 1/50 |    4.5s
+train loss:0.7032 | acc:0.5025
+val   loss:0.6882 | acc:0.5700
+[[34m2025-04-28 11:17:30[0m] 
+Epoch 2/50 |    4.4s
+train loss:0.6930 | acc:0.5050
+val   loss:0.6942 | acc:0.5100
+[[34m2025-04-28 11:17:34[0m] 
+Epoch 3/50 |    4.4s
+train loss:0.6923 | acc:0.5170
+val   loss:0.6977 | acc:0.4500
+[[34m2025-04-28 11:17:39[0m] 
+Epoch 4/50 |    4.4s
+train loss:0.6316 | acc:0.6725
+val   loss:0.5080 | acc:0.7900
+[[34m2025-04-28 11:17:44[0m] 
+Epoch 5/50 |    4.4s
+train loss:0.5397 | acc:0.7360
+val   loss:0.4935 | acc:0.7700
+[[34m2025-04-28 11:17:48[0m] 
+Epoch 6/50 |    4.4s
+train loss:0.4848 | acc:0.7698
+val   loss:0.4582 | acc:0.7900
+[[34m2025-04-28 11:17:54[0m] 
+Epoch 7/50 |    4.4s
+train loss:0.4150 | acc:0.8150
+val   loss:0.3911 | acc:0.7900
+[[34m2025-04-28 11:17:59[0m] 
+Epoch 8/50 |    4.4s
+train loss:0.3851 | acc:0.8333
+val   loss:0.3261 | acc:0.8600
+[[34m2025-04-28 11:18:03[0m] 
+Epoch 9/50 |    4.4s
+train loss:0.3245 | acc:0.8620
+val   loss:0.3097 | acc:0.8600
+[[34m2025-04-28 11:18:08[0m] 
+Epoch 10/50 |    4.4s
+train loss:0.2634 | acc:0.8962
+val   loss:0.2173 | acc:0.9100
+[[34m2025-04-28 11:18:12[0m] 
+Epoch 11/50 |    4.4s
+train loss:0.2408 | acc:0.9060
+val   loss:0.2267 | acc:0.9100
+[[34m2025-04-28 11:18:18[0m] 
+Epoch 12/50 |    4.4s
+train loss:0.2307 | acc:0.9097
+val   loss:0.2003 | acc:0.9100
+[[34m2025-04-28 11:18:23[0m] 
+Epoch 13/50 |    4.4s
+train loss:0.2085 | acc:0.9210
+val   loss:0.1525 | acc:0.9300
+[[34m2025-04-28 11:18:27[0m] 
+Epoch 14/50 |    4.6s
+train loss:0.2089 | acc:0.9175
+val   loss:0.1422 | acc:0.9700
+[[34m2025-04-28 11:18:32[0m] 
+Epoch 15/50 |    4.5s
+train loss:0.1936 | acc:0.9243
+val   loss:0.1531 | acc:0.9700
+[[34m2025-04-28 11:18:37[0m] 
+Epoch 16/50 |    4.5s
+train loss:0.1739 | acc:0.9327
+val   loss:0.1309 | acc:0.9600
+[[34m2025-04-28 11:18:43[0m] 
+Epoch 17/50 |    4.5s
+train loss:0.1658 | acc:0.9365
+val   loss:0.1022 | acc:0.9500
+[[34m2025-04-28 11:18:47[0m] 
+Epoch 18/50 |    4.3s
+train loss:0.1453 | acc:0.9463
+val   loss:0.1240 | acc:0.9500
+[[34m2025-04-28 11:18:52[0m] 
+Epoch 19/50 |    4.4s
+train loss:0.1380 | acc:0.9530
+val   loss:0.1004 | acc:0.9700
+[[34m2025-04-28 11:18:56[0m] 
+Epoch 20/50 |    4.4s
+train loss:0.1250 | acc:0.9550
+val   loss:0.1475 | acc:0.9400
+[[34m2025-04-28 11:19:01[0m] 
+Epoch 21/50 |    4.4s
+train loss:0.1062 | acc:0.9645
+val   loss:0.0596 | acc:0.9800
+[[34m2025-04-28 11:19:07[0m] 
+Epoch 22/50 |    4.3s
+train loss:0.1053 | acc:0.9650
+val   loss:0.1213 | acc:0.9700
+[[34m2025-04-28 11:19:11[0m] 
+Epoch 23/50 |    4.3s
+train loss:0.0979 | acc:0.9675
+val   loss:0.0741 | acc:0.9800
+[[34m2025-04-28 11:19:16[0m] 
+Epoch 24/50 |    4.4s
+train loss:0.0965 | acc:0.9670
+val   loss:0.0359 | acc:1.0000
+[[34m2025-04-28 11:19:20[0m] 
+Epoch 25/50 |    4.3s
+train loss:0.0855 | acc:0.9702
+val   loss:0.0797 | acc:0.9700
+[[34m2025-04-28 11:19:25[0m] 
+New best model saved at epoch 26 with validation accuracy 0.9700
+[[34m2025-04-28 11:19:25[0m] 
+Epoch 26/50 |    4.4s
+train loss:0.0785 | acc:0.9735
+val   loss:0.0627 | acc:0.9700
+[[34m2025-04-28 11:19:31[0m] 
+New best model saved at epoch 27 with validation accuracy 0.9800
+[[34m2025-04-28 11:19:31[0m] 
+Epoch 27/50 |    4.3s
+train loss:0.0777 | acc:0.9722
+val   loss:0.0623 | acc:0.9800
+[[34m2025-04-28 11:19:36[0m] 
+Epoch 28/50 |    4.5s
+train loss:0.0810 | acc:0.9725
+val   loss:0.0982 | acc:0.9700
+[[34m2025-04-28 11:19:40[0m] 
+Epoch 29/50 |    4.5s
+train loss:0.0709 | acc:0.9768
+val   loss:0.0502 | acc:0.9800
+[[34m2025-04-28 11:19:45[0m] 
+New best model saved at epoch 30 with validation accuracy 0.9900
+[[34m2025-04-28 11:19:45[0m] 
+Epoch 30/50 |    4.4s
+train loss:0.0646 | acc:0.9792
+val   loss:0.0254 | acc:0.9900
+[[34m2025-04-28 11:19:49[0m] 
+Epoch 31/50 |    4.4s
+train loss:0.0523 | acc:0.9828
+val   loss:0.0447 | acc:0.9900
+[[34m2025-04-28 11:19:55[0m] 
+Epoch 32/50 |    4.4s
+train loss:0.0626 | acc:0.9805
+val   loss:0.0556 | acc:0.9800
+[[34m2025-04-28 11:20:00[0m] 
+New best model saved at epoch 33 with validation accuracy 1.0000
+[[34m2025-04-28 11:20:00[0m] 
+Epoch 33/50 |    4.3s
+train loss:0.0570 | acc:0.9815
+val   loss:0.0266 | acc:1.0000
+[[34m2025-04-28 11:20:04[0m] 
+Epoch 34/50 |    4.4s
+train loss:0.0559 | acc:0.9830
+val   loss:0.0169 | acc:1.0000
+[[34m2025-04-28 11:20:09[0m] 
+Epoch 35/50 |    4.5s
+train loss:0.0458 | acc:0.9858
+val   loss:0.0128 | acc:1.0000
+[[34m2025-04-28 11:20:14[0m] 
+Epoch 36/50 |    4.5s
+train loss:0.0458 | acc:0.9848
+val   loss:0.0444 | acc:0.9800
+[[34m2025-04-28 11:20:20[0m] 
+Epoch 37/50 |    4.4s
+train loss:0.0432 | acc:0.9858
+val   loss:0.0142 | acc:1.0000
+[[34m2025-04-28 11:20:24[0m] 
+Epoch 38/50 |    4.4s
+train loss:0.0519 | acc:0.9838
+val   loss:0.0309 | acc:0.9900
+[[34m2025-04-28 11:20:29[0m] 
+Epoch 39/50 |    4.4s
+train loss:0.0441 | acc:0.9868
+val   loss:0.0141 | acc:1.0000
+[[34m2025-04-28 11:20:33[0m] 
+Epoch 40/50 |    4.4s
+train loss:0.0372 | acc:0.9892
+val   loss:0.0171 | acc:1.0000
+[[34m2025-04-28 11:20:38[0m] 
+Epoch 41/50 |    4.4s
+train loss:0.0372 | acc:0.9875
+val   loss:0.0258 | acc:0.9900
+[[34m2025-04-28 11:20:44[0m] 
+Epoch 42/50 |    4.5s
+train loss:0.0409 | acc:0.9895
+val   loss:0.0406 | acc:0.9700
+[[34m2025-04-28 11:20:49[0m] 
+Epoch 43/50 |    4.5s
+train loss:0.0399 | acc:0.9872
+val   loss:0.0189 | acc:1.0000
+[[34m2025-04-28 11:20:53[0m] 
+Epoch 44/50 |    4.5s
+train loss:0.0379 | acc:0.9895
+val   loss:0.0200 | acc:1.0000
+[[34m2025-04-28 11:20:58[0m] 
+Epoch 45/50 |    4.4s
+train loss:0.0377 | acc:0.9895
+val   loss:0.0102 | acc:1.0000
+[[34m2025-04-28 11:21:03[0m] 
+Epoch 46/50 |    4.5s
+train loss:0.0390 | acc:0.9882
+val   loss:0.0135 | acc:1.0000
+[[34m2025-04-28 11:21:09[0m] 
+Epoch 47/50 |    4.4s
+train loss:0.0391 | acc:0.9878
+val   loss:0.0102 | acc:1.0000
+[[34m2025-04-28 11:21:13[0m] 
+Epoch 48/50 |    4.4s
+train loss:0.0384 | acc:0.9888
+val   loss:0.0152 | acc:1.0000
+[[34m2025-04-28 11:21:18[0m] 
+Epoch 49/50 |    4.3s
+train loss:0.0345 | acc:0.9898
+val   loss:0.0128 | acc:1.0000
+[[34m2025-04-28 11:21:22[0m] 
+Epoch 50/50 |    4.3s
+train loss:0.0364 | acc:0.9888
+val   loss:0.0190 | acc:1.0000
+[[34m2025-04-28 11:21:24[0m] Animation.save using <class 'matplotlib.animation.PillowWriter'>
+[[34m2025-04-28 11:22:33[0m] Animation.save using <class 'matplotlib.animation.PillowWriter'>
+[[34m2025-04-28 11:23:04[0m] Animation.save using <class 'matplotlib.animation.PillowWriter'>
+[[34m2025-04-28 11:24:05[0m] Animation.save using <class 'matplotlib.animation.PillowWriter'>
+[[34m2025-04-28 11:24:35[0m] Animation.save using <class 'matplotlib.animation.PillowWriter'>
+[[34m2025-04-28 11:24:46[0m] 
+ S/D test loss=0.1983 | acc=0.9279
