@@ -1,7 +1,7 @@
 """
-Dataset classes for Kuramoto Relational Learning experiments.
+Dataset classes for experiments.
 
-Includes datasets for same/different relation detection and
+Includes datasets for same/different and
 relational match-to-sample tasks.
 """
 

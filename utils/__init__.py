@@ -1,5 +1,5 @@
 """
-Utility functions for Kuramoto Relational Learning.
+Utility functions.
 """
 
 from utils.logging import create_logger, log_gradient_norms, plot_history

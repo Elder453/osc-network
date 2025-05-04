@@ -1,5 +1,5 @@
 """
-Main entry point for Kuramoto Relational Learning experiments.
+Main entry point for Oscillator-Based Relational Learning experiments.
 
 This script handles parsing arguments and launching training for same/different
 and relational match-to-sample tasks.
@@ -20,14 +20,13 @@ from training.rmts_trainer import train_rmts
 
 def main():
     """
-    Main entry point for the Kuramoto Relational Learning experiments.
+    Main entry point for the Oscillator-Based Relational Learning experiments.
     
     Handles argument parsing and delegates to training functions.
     """
     # Load arguments
     args = get_args()
     
-    # Initialize history dictionaries
     history_sd = {"train_acc": []}     # same/different
     history_rmts = {"train_acc": []}   # RMTS
 

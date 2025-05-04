@@ -2,7 +2,7 @@
 Training pipeline for same/different task.
 
 Contains functions for the main training loop, validation, and testing
-of Kuramoto Relational Learning models.
+of oscillatory models.
 """
 
 import os

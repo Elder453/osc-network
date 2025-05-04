@@ -1,5 +1,5 @@
 """
-Baseline models that don't use Kuramoto dynamics.
+Baseline models that don't use oscillatory dynamics.
 
 Contains CNN-based baseline models for comparison with
 Kuramoto oscillator networks.
@@ -88,7 +88,7 @@ class BaselineSameDiffModel(nn.Module):
         # classify
         logit = self.classifier(coherence_vector)
         
-        # return a structure compatible with the kuramoto model's output
+        # return a structure compatible with the oscillatory model's output
         # - p1, p2 as final oscillator states
         # - [p1], [p2] as trajectories (just single-step here)
         # - None for energy values

@@ -1,5 +1,5 @@
 """
-Classification models for Kuramoto Relational Learning.
+Classification models.
 
 Contains MLP classifiers for both same/different task and
 relational match-to-sample task.

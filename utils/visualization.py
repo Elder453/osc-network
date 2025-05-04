@@ -1,5 +1,5 @@
 """
-Visualization utilities for Kuramoto Relational Learning.
+Visualization utilities.
 
 Provides functions for visualizing oscillator dynamics, energy curves,
 and model outputs.
@@ -33,10 +33,7 @@ def _wandb_log_animation(anim, tag, fps=2):
     gif_path = tmpdir / f"{tag}.gif"
     gif_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # write the GIF
     anim.save(gif_path, writer="pillow", fps=fps)
-
-    # push to W&B
     wandb.log({
         f"{tag}_gif": wandb.Video(str(gif_path), format="gif"),
     })
@@ -92,14 +89,13 @@ def collect_energy_values(model, sample_batch, device):
         _, oscillator_data = model(img1, img2)
         energy_values = oscillator_data[4]  # extract energy values
         
-        # reorganize energy values for visualization
         formatted_energy = {
             # overall average energy across all samples
             "all": {
                 step: {
                     "mean": energy.mean().item(),
                     "std": energy.std().item(),
-                    "n": energy.size(0)  # sample size for computing confidence intervals
+                    "n": energy.size(0)  # sample size for CIs
                 } 
                 for step, energy in enumerate(energy_values)
             }
@@ -136,7 +132,7 @@ def collect_energy_values(model, sample_batch, device):
 
 def plot_energy_one_epoch(energy_values, epoch, ax=None, confidence_level=0.95):
     """
-    Plot energy evolution for one epoch with academic paper style and confidence intervals.
+    Plot energy evolution for one epoch with confidence intervals.
     
     Parameters
     ----------
@@ -159,7 +155,6 @@ def plot_energy_one_epoch(energy_values, epoch, ax=None, confidence_level=0.95):
     if own_ax:
         fig, ax = plt.subplots(figsize=(10, 5))
     
-    # use consistent colors that match your other plots
     SALMON = "#e49797"
     TEAL = "#67c2c7"
     BLACK = "#000000"
@@ -170,48 +165,43 @@ def plot_energy_one_epoch(energy_values, epoch, ax=None, confidence_level=0.95):
         "different": SALMON
     }
     
-    # z-score for the desired confidence level (e.g., 1.96 for 95% CI)
+    # z-score for confidence level (e.g., 1.96 for 95% CI)
     import scipy.stats as stats
     z_score = stats.norm.ppf((1 + confidence_level) / 2)
     
-    # plot each category with consistent line styling and confidence intervals
     for cat, data in energy_values.items():
         steps = sorted(data.keys())
         means = [data[step]["mean"] for step in steps]
         
-        # calculate standard errors for confidence intervals
+        # calculate standard errors
         stds = [data[step]["std"] for step in steps]
         ns = [data[step]["n"] for step in steps]
         se = [std / (n ** 0.5) for std, n in zip(stds, ns)]
         
-        # calculate confidence interval bounds
+        # calculate CI bounds
         ci_lower = [mean - z_score * se_val for mean, se_val in zip(means, se)]
         ci_upper = [mean + z_score * se_val for mean, se_val in zip(means, se)]
         
-        # plot the mean line
         ax.plot(
             steps,
             means,
             label=cat.lower() + " pairs",
             color=colors.get(cat, "gray"),
-            lw=2.0,  # consistent line width
+            lw=2.0,
         )
         
-        # add shaded confidence interval
+        # add shaded CI
         ax.fill_between(steps, ci_lower, ci_upper, 
                         color=colors.get(cat, "gray"), alpha=0.2)
     
-    # set labels and title
     ax.set_xlabel("kuramoto step")
     ax.set_ylabel("energy")
 
     label = "init" if epoch < 0 else f"epoch {epoch+1}"
     ax.set_title(f"{label}")
     
-    # legend placement consistent with your other plots
     ax.legend(loc="lower left", frameon=True, edgecolor='lightgray', framealpha=0.8)
     
-    # no grid
     ax.grid(False)
     
     if own_ax:
@@ -245,7 +235,6 @@ def build_energy_animation(all_epoch_energies,
     str
         Path to the saved GIF file
     """
-    # static figure scaffolding
     epochs = sorted(all_epoch_energies.keys())
     steps = list(next(iter(all_epoch_energies.values()))["all"].keys())
 
@@ -342,14 +331,12 @@ def plot_energy_init_vs_trained(all_epoch_energies,
         'legend.fontsize': 7,     # legend text size
         'figure.titlesize': 17,   # figure title size
     })
-    
-    # extract step indices 
+     
     steps = list(all_epoch_energies[init_epoch]["all"].keys())
     
-    # color mapping (same as animation)
     COLORS = {"all": "#000000", "same": "#67c2c7", "different": "#e49797"}
     
-    # z-score for the desired confidence level (e.g., 1.96 for 95% CI)
+    # z-score for given confidence level
     import scipy.stats as stats
     z_score = stats.norm.ppf((1 + confidence_level) / 2)
     
@@ -360,16 +347,15 @@ def plot_energy_init_vs_trained(all_epoch_energies,
             # extract values for initialization
             init_means = [all_epoch_energies[init_epoch][cat][step]["mean"] for step in steps]
             
-            # calculate standard errors for confidence intervals
+            # calculate standard errors
             init_stds = [all_epoch_energies[init_epoch][cat][step]["std"] for step in steps]
             init_ns = [all_epoch_energies[init_epoch][cat][step]["n"] for step in steps]
             init_se = [std / (n ** 0.5) for std, n in zip(init_stds, init_ns)]
             
-            # calculate confidence interval bounds
+            # calculate CI bounds
             init_ci_lower = [mean - z_score * se for mean, se in zip(init_means, init_se)]
             init_ci_upper = [mean + z_score * se for mean, se in zip(init_means, init_se)]
             
-            # plot the mean line
             ax.plot(steps,
                     init_means,
                     linestyle='--', 
@@ -378,7 +364,7 @@ def plot_energy_init_vs_trained(all_epoch_energies,
                     color=COLORS.get(cat, 'gray'),
                     label=f'"{cat}" pairs (init)' if cat != "all" else f'{cat} pairs (init)')
             
-            # add shaded confidence interval
+            # add shaded CI
             ax.fill_between(steps, init_ci_lower, init_ci_upper, 
                            color=COLORS.get(cat, 'gray'), alpha=0.15)
         
@@ -386,16 +372,15 @@ def plot_energy_init_vs_trained(all_epoch_energies,
             # extract values for final epoch
             final_means = [all_epoch_energies[final_epoch][cat][step]["mean"] for step in steps]
             
-            # calculate standard errors for confidence intervals
+            # calculate standard errors for CIs
             final_stds = [all_epoch_energies[final_epoch][cat][step]["std"] for step in steps]
             final_ns = [all_epoch_energies[final_epoch][cat][step]["n"] for step in steps]
             final_se = [std / (n ** 0.5) for std, n in zip(final_stds, final_ns)]
             
-            # calculate confidence interval bounds
+            # calculate CI bounds
             final_ci_lower = [mean - z_score * se for mean, se in zip(final_means, final_se)]
             final_ci_upper = [mean + z_score * se for mean, se in zip(final_means, final_se)]
             
-            # plot the mean line
             ax.plot(steps, 
                     final_means, 
                     linestyle='-', 
@@ -403,11 +388,10 @@ def plot_energy_init_vs_trained(all_epoch_energies,
                     color=COLORS.get(cat, 'gray'),
                     label=f'"{cat}" pairs (epoch {final_epoch+1})' if cat != "all" else f'{cat} pairs (epoch {final_epoch+1})')
             
-            # add shaded confidence interval
+            # add shaded CI
             ax.fill_between(steps, final_ci_lower, final_ci_upper, 
                            color=COLORS.get(cat, 'gray'), alpha=0.2)
     
-    # formatting
     ax.set_xlabel("Kuramoto Step")
     ax.set_ylabel("Energy")
     ax.grid(False)
@@ -469,17 +453,17 @@ def visualize_oscillators_2d(
     features = min(D, max_features)
     rows, cols = _best_grid(features)
     
-    # pre-convert to numpy (shape = [steps, D, 2])
+    # shape = [steps, D, 2]
     traj1_np = np.array([t[0].cpu().numpy()[:, :2] for t in trajectory1])
     traj2_np = np.array([t[0].cpu().numpy()[:, :2] for t in trajectory2])
 
-    # scale the trajectories by the scale factor
+    # scale trajectories by the scale factor
     traj1_np = traj1_np * SCALE_FACTOR
     traj2_np = traj2_np * SCALE_FACTOR
     
     coh_np = 0.5 * (traj1_np + traj2_np) # [steps, D, 2]
     
-    # apply additional radius scaling to separate overlapping trajectories
+    # additional radius scaling to separate overlapping trajectories
     traj1_np_scaled = traj1_np * 0.97  # inner orbit
     traj2_np_scaled = traj2_np * 1.03  # outer orbit
     
@@ -490,7 +474,6 @@ def visualize_oscillators_2d(
     # create figure with proper spacing
     fig = plt.figure(figsize=(3*cols, 3*rows + 0.8), dpi=200)  # add extra height for title/legend
     
-    # create a gridspec with extra space at the top
     gs = fig.add_gridspec(
         rows, cols,
         top=0.85,    # pull title up
@@ -509,14 +492,13 @@ def visualize_oscillators_2d(
     
     axes = np.array(axes)
     
-    # add a single legend to the figure with a box around it
     legend_elements = [
         plt.Line2D([0], [0], marker='o', color=TEAL, label=r'$osc_{1}$',
                   markerfacecolor=TEAL, markersize=20, linewidth=0),
         plt.Line2D([0], [0], marker='o', color=SALMON, label=r'$osc_{2}$',
                   markerfacecolor=SALMON, markersize=20, linewidth=0),
         
-        # c-term directions  (hollow triangles to distinguish them)
+        # c-term directions (hollow triangles)
         plt.Line2D([0], [0], marker='^', color=TEAL, label=r'$c_{1}$',
                    markerfacecolor=TEAL, markersize=20, linewidth=0),
         plt.Line2D([0], [0], marker='^', color=SALMON,  label=r'$c_{2}$',
@@ -540,10 +522,9 @@ def visualize_oscillators_2d(
                fontsize=18,
                borderaxespad=0.2)
     
-    # set a single title for the entire figure with time step
+    # title for the entire figure with time step
     time_title = fig.suptitle(f"t = 0", fontsize=28, y=0.89)
     
-    # hide unused panels cleanly
     for a in axes[features:]:
         a.set_visible(False)
     
@@ -552,7 +533,6 @@ def visualize_oscillators_2d(
             a = axes[i]
             a.clear()
             a.set_aspect("equal", "box")
-            # adjust axis limits based on scale factor plus some padding
             axis_limit = SCALE_FACTOR * 1.2  # add 20% padding around scaled unit circle
             a.set_xlim([-axis_limit, axis_limit]) 
             a.set_ylim([-axis_limit, axis_limit])
@@ -578,8 +558,6 @@ def visualize_oscillators_2d(
             a = axes[i]
             a.clear()
             a.set_aspect("equal", "box")
-            
-            # adjust axis limits based on scale factor plus some padding
             axis_limit = SCALE_FACTOR * 1.1  # add 20% padding around scaled unit circle
             a.set_xlim([-axis_limit, axis_limit]) 
             a.set_ylim([-axis_limit, axis_limit])
@@ -715,13 +693,12 @@ def visualize_image_pair(img1, img2, prob, label=None):
         img2_np = img2_np.permute(1, 2, 0)
         ax2.imshow(img2_np)
     
-    # set titles and remove axes
     ax1.set_title("Image 1", fontsize=12)
     ax2.set_title("Image 2", fontsize=12)
     ax1.axis("off")
     ax2.axis("off")
     
-    # title with prediction and ground truth if provided
+    # title with prediction and ground truth
     title = ""
     if label is not None or prob is not None:
         if label is not None:
@@ -761,21 +738,15 @@ def visualize_energy_curve(energy_vals, prob=None, label=None):
     SALMON = "#e49797"
     BLACK = "#000000"
     
-    # create figure for energy curve
     fig, ax = plt.subplots(figsize=(10, 5))
     
-    # extract energy values
     steps = list(range(len(energy_vals)))
     energies = [e[0].item() for e in energy_vals]
     
     # plot energy curve
     ax.plot(steps, energies, "-", color=BLACK, lw=2.0, alpha=0.8)
-    
-    # axis labels
     ax.set_xlabel("kuramoto step", fontsize=11)
     ax.set_ylabel("energy", fontsize=11)
-    
-    # no grid
     ax.grid(False)
     
     plt.tight_layout()
@@ -817,7 +788,6 @@ def visualize_oscillator_features(traj1, traj2, c1, c2, max_features=16):
     # create figure with appropriate size
     fig = plt.figure(figsize=(3*cols, 3*rows + 0.8))
     
-    # add a legend at the top
     legend_elements = [
         # oscillators
         plt.Line2D([0], [0], marker='o', color=TEAL, label=r'$osc_1$',
@@ -944,12 +914,10 @@ def visualize_single_example(model, img1, img2, label=None, device=None, max_fea
     tuple
         (img_fig, energy_fig, osc_fig, model_outputs)
     """
-    # setup
     if device is None:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.eval()
     
-    # ensure batch dimension
     if img1.dim() == 3: img1 = img1.unsqueeze(0)
     if img2.dim() == 3: img2 = img2.unsqueeze(0)
     img1, img2 = img1.to(device), img2.to(device)
@@ -1023,7 +991,6 @@ def log_example_visuals(model, sample_batch, epoch, device, alpha=1.0, embedding
             f"examples_same/epoch_{epoch}_oscillators": wandb.Image(osc_fig)
         })
         
-        # close figures to prevent memory leaks
         plt.close(img_fig)
         plt.close(energy_fig)
         plt.close(osc_fig)
@@ -1047,7 +1014,6 @@ def log_example_visuals(model, sample_batch, epoch, device, alpha=1.0, embedding
             f"examples_diff/epoch_{epoch}_oscillators": wandb.Image(osc_fig)
         })
         
-        # close figures to prevent memory leaks
         plt.close(img_fig)
         plt.close(energy_fig)
         plt.close(osc_fig)

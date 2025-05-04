@@ -1,5 +1,5 @@
 """
-Configuration settings for Kuramoto Relational Learning experiments.
+Configuration settings for experiments.
 
 Contains default hyperparameters and command-line argument handling.
 """
@@ -17,7 +17,7 @@ def get_args():
     argparse.Namespace
         Parsed arguments with default values
     """
-    parser = argparse.ArgumentParser(description="Kuramoto Relational Learning")
+    parser = argparse.ArgumentParser(description="Oscillatory Relational Learning")
     
     # Experiment settings
     parser.add_argument("--exp_name", type=str, default="kuramoto-run", 

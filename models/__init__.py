@@ -1,5 +1,5 @@
 """
-Neural network models for Kuramoto Relational Learning.
+Neural network models.
 """
 
 from models.feature_extractor import FeatureExtractor

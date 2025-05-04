@@ -1,5 +1,5 @@
 """
-Coherence measurement for Kuramoto oscillator states.
+Coherence measurement for oscillator states.
 
 Implements methods to measure synchronization between oscillators.
 """

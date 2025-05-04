@@ -1,5 +1,5 @@
 """
-Logging utilities for Kuramoto Relational Learning.
+Logging utilities.
 
 Provides functions for setting up logging and tracking model performance.
 """

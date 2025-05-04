@@ -1,5 +1,5 @@
 """
-Training functions for Kuramoto Relational Learning.
+Training functions.
 """
 
 from training.trainer import train_samediff, run_epoch

@@ -1,5 +1,5 @@
 """
-Datasets and data transformations for Kuramoto Relational Learning.
+Datasets and data transformations.
 """
 
 from data.datasets import IconSameDiffDataset, IconRelMatchToSampleDataset
