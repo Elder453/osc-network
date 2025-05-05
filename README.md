@@ -2,6 +2,20 @@
 
 A differentiable, oscillator-based neural architecture for abstract relational reasoning. This repository implements biologically-inspired binding-by-synchrony mechanisms using Kuramoto dynamics to solve relational reasoning tasks such as same/different discrimination and relational match-to-sample (RMTS).
 
+<!-- section for "Same" Objects -->
+<h3 align="center">"Same" Objects</h3>
+<p align="center">
+  <img src="gifs/same_overlay.gif" width="300" style="margin-right: 10px;" />
+  <img src="gifs/same.gif" width="300" />
+</p>
+
+<!-- section for "Different" Objects -->
+<h3 align="center">"Different" Objects</h3>
+<p align="center">
+  <img src="gifs/diff_overlay.gif" width="300" style="margin-right: 10px;" />
+  <img src="gifs/diff.gif" width="300" />
+</p>
+
 ## Overview
 
 Relational reasoning requires a learning system to represent *how* entities are related, not merely *what* they are. This project implements a neural architecture that leverages synchronous oscillations to dynamically bind distributed features, inspired by neuroscientific evidence. Each feature dimension of two input objects is realized as a pair of coupled phase oscillators whose interactions are governed by learned within- and between-object coupling tensors.
